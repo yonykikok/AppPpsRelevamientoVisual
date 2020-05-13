@@ -1,0 +1,57 @@
+ion-header{
+  background: black;
+}
+ion-content{
+  --background: black;
+}
+img{
+  position: absolute;
+  border: 5px solid rgb(56, 205, 255);
+  border-radius: 100%;
+  left: 13%;
+  max-width: 75%;
+  margin-top: 50px;
+  background: lightblue;
+  min-height: 250px;
+}
+#imgNuevo:active,#imgViejo:active
+{
+background-color: black;
+border-color: blue;
+}
+#imgViejo{
+  top: 40%;
+}
+div{
+  position: absolute;
+  background-color: black;
+  z-index: 2;
+  left: 12.3%;
+  transform: rotateZ(-20deg);
+  padding-left: 40px;
+  padding-right: 47px;
+  border-top: red 3px solid;
+  border-bottom: red 3px solid;
+}
+div:active{
+  background: transparent;
+  label{
+
+    color: red;
+  }
+}
+label{
+  color: white;
+  font-size: 200%;
+}
+
+#cosasLindas{
+  top: 22%;
+}
+#cosasFeas{
+top: 62%;
+padding-left: 50px;
+padding-right: 60px;
+border-top: red 3px solid;
+border-bottom: red 3px solid;
+}

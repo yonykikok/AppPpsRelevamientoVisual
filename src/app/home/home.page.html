@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="cosasLindas">
+    <label>
+      Cosas lindas
+    </label>
+  </div>
+  <div id="cosasFeas">
+    <label>
+      Cosas feas
+    </label>
+  </div>
+  <img id="imgNuevo" src="../../assets/images/nuevo.png" alt="casa nueva" (click)="redireccionarA('cosasLindas')">
+  <img id="imgViejo" src="../../assets/images/viejo.png" alt="casa vieja" (click)="redireccionarA('cosasFeas')">
+</ion-content>

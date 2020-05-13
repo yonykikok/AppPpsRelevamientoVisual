@@ -1,0 +1,30 @@
+<ion-header class="centrado">
+  <ion-title>Relevamiento visual</ion-title>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <form class="centrado">
+      <ion-item>
+        <ion-input type='email' placeholder="Ingrese su correo" [(ngModel)]="user.email" name="email" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type='password' placeholder="Ingrese su contraseña" [(ngModel)]="user.password" name="password"
+          required></ion-input>
+      </ion-item>
+      <div id="buttonContainer">
+        <div id="button" type="submit" (click)="onLogin()" block>Ingresar</div>
+      </div>
+    </form>
+    <div id="usuarios" class="centrado">
+      <ion-chip color="primary" *ngFor="let usuario of listaUsuarios" (click)="seleccionarUsuario(usuario)">
+        <label> {{usuario.name}}</label>
+        <ion-icon color="secondary" name="home"></ion-icon>
+      </ion-chip>
+    </div>
+  </ion-card>
+  <img src="../../assets/images/casa.png" alt="casa">
+
+
+</ion-content>

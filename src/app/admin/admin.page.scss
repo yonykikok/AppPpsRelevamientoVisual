@@ -1,0 +1,166 @@
+ion-content{
+    --background:black;
+}
+#graficos{
+    position: absolute;
+    top: 90%;
+    left: 7%;
+    font-size: 300%;
+    border-radius: 100%;
+    border: 2px solid blue;
+    min-width: 54px;
+    min-height: 54px;
+    max-width: 54px;
+    max-height: 54px;
+    .barra{
+        transform: translateY(-7px);
+        min-width:6px;
+        display: inline-block;
+    }
+    #barra1{
+        min-height: 15px;
+        background-color: red;
+    }
+    #barra2{
+
+        min-height: 30px;
+        background-color: blue;
+
+    }
+    #barra3{
+        
+        min-height: 20px;
+        background-color: green;
+    }
+
+}
+h1{
+    color: white;
+}    
+p-inputSwitch{
+    top: 3%;
+    left: 85%;
+    position: absolute;
+  }
+//   ion-toggle {
+//     --handle-background-checked: #fff url(/assets/power-icon.png) no-repeat center / contain;
+//   }
+#like,#unLike{
+    font-size: 200%;
+}
+#like:active,#unLike:active{
+    border-radius: 100%;
+    transform: scale(1.3);
+}
+ion-badge {
+    position: relative;
+    float: right;
+}
+#like{
+    position: relative;
+    float: right;
+}
+#unLike{
+    position: relative;
+    float: left;
+}
+    ion-icon{
+        z-index: 10;
+        top: 90%;
+        left: 83%;
+    position: absolute;
+    border-radius: 100%;
+    background-color: transparent;
+    border: 2px solid blue;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    text-align: center;
+    color: blue;
+    }
+    ion-icon:active{
+        background-color: rgba(86, 86, 202, 0.753);
+    }
+
+    ion-card{
+        .bordear{
+            border: 2px solid blue;
+        }
+        border-radius: 15px;
+        height: 100px;
+
+
+        img{
+            width: 100px;
+            height: 100px;
+         }
+        display: inline-block;
+    }
+    #imgFullScreend{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+    }
+    .link{
+        color: rgb(42, 42, 141) !important;
+        text-decoration: underline;
+    } 
+    .link:active{
+        color: rgb(79, 79, 216) !important;
+    }
+    #imgSeleccionada{
+        p, ion-title{
+            color: white;
+        }
+        background: rgba(83, 82, 82, 0.945);
+        ion-title{
+            margin-top: 20px;
+        }
+        position: absolute;
+        z-index: 20;
+        top: 9%;
+        left: -2.5%;
+        width: 99.5%;
+        height: 500px;
+        img{
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            border: 1px solid blue;
+
+        }
+        #back{
+            position: absolute;
+            left: 0%;
+            top: 5%;
+            transform: scale(0.7);
+
+        }
+    }
+    #spinner{
+        position: absolute;
+        z-index: 10;
+        left: 45.7%;
+        top: 44.7%;
+        --color:blue;
+        transform: scale(3.5);
+        animation-name: colores;
+       animation-duration: 3s;
+       animation-iteration-count: infinite;
+    }
+    @keyframes colores{
+        from{
+            
+        }33%{           
+            --color:blue;
+        }
+        66%{
+            --color:red;
+        }
+        to{
+        --color:green;
+        }
+    }

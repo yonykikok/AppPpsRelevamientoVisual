@@ -1,0 +1,57 @@
+ion-header{
+    *{
+        color: white;
+        background: black;
+    }
+    ion-title{
+        padding: 20px;
+        font-size: 200%;
+    }
+}
+ion-content{
+    --background: black;
+}
+ion-card{
+
+    background: transparent;
+}
+ion-input,ion-item{
+    --background: black !important;
+    color: white;
+    margin-top: 10px;
+    border-radius: 30px;
+    text-align: center;
+}
+ion-item{
+    --background: rgb(65, 65, 250) !important;
+}
+ion-item:hover{
+    --background: rgb(49, 34, 255) !important;
+}
+
+#buttonContainer
+{
+    margin-top: 10px;
+    border-radius: 30px;
+    height: 50px;
+    background-color: rgb(65, 65, 250);
+}
+#button{
+    position: absolute;
+    color: white;
+    font-size: 120%;
+    background-color: black;
+    border-radius: 30px;
+    top: 53.7%;
+    left: 5%;
+    padding-left: 35%;
+    padding-right: 37%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 999;
+}
+
+#button:active{
+   background-color: blue;
+    transform: translateY(-5px);
+}

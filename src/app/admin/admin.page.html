@@ -1,0 +1,64 @@
+<ion-content class="centrado">
+
+  <app-chart (toggleGrapicEvent)='toggleChart()' *ngIf="showChart"></app-chart>
+  <!-- <ion-button > CHART</ion-button> -->
+  <div id="graficos" (click)="toggleChart()">
+    <div id="barra1" class="barra"></div>
+    <div class="barra"></div>
+    <div id="barra2" class="barra"></div>
+    <div class="barra"></div>
+    <div id="barra3" class="barra"></div>
+  </div>
+  <p-inputSwitch [(ngModel)]="mostrarImagenesPropias" (click)='filtrarListaPorUsuario(currentUser.name)'>
+  </p-inputSwitch>
+  <h1 *ngIf="currentUser.galery=='cosasLindas' ">Cosas lindas</h1>
+  <h1 *ngIf="currentUser.galery=='cosasFeas'">Cosas feas</h1>
+  <h1 *ngIf="mostrarImagenesPropias==true">Mis fotos</h1>
+  <ion-spinner id="spinner" *ngIf="spinner" name="dots"></ion-spinner>
+  <!-- INICIO LISTA DE IAMGENES -->
+  <div *ngIf="mostrarImagenesPropias==false">
+    <ion-card *ngFor="let imagen of listaDeImagenes" (click)="mostrarInformacionDeArchivo(imagen)">
+      <img [src]="imagen.link" alt="imagen tomada" *ngIf='imagen.usuario!=currentUser.name'>
+      <img [src]="imagen.link" class="bordear" alt="imagen tomada" *ngIf='imagen.usuario==currentUser.name'>
+    </ion-card>
+  </div>
+  <div *ngIf="mostrarImagenesPropias==true">
+    <ion-card *ngFor="let imagen of listaDeImagenesPropias" (click)="mostrarInformacionDeArchivo(imagen)">
+      <img [src]="imagen.link" alt="imagen tomada" *ngIf='imagen.usuario!=currentUser.name'>
+      <img [src]="imagen.link" class="bordear" alt="imagen tomada" *ngIf='imagen.usuario==currentUser.name'>
+    </ion-card>
+  </div>
+  <!-- FIN LISTA DE IAMGENES -->
+
+
+  <!-- INICIO DETALLADO -->
+  <ion-card id="imgSeleccionada" *ngIf="imgSeleccionada">
+    <ion-card-header>
+      <ion-badge color="secondary">{{imgSeleccionada.votos}}</ion-badge>
+      <ion-icon id="back" name="arrow-undo-outline" (click)="deseleccionarImagen()"></ion-icon>
+      <ion-title>
+        Autor: {{imgSeleccionada.usuario}}
+      </ion-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img src="{{imgSeleccionada.link}}" alt="imagen seleccionada">
+      <p>
+        Fecha: {{imgSeleccionada.fecha | date : 'short'}}
+      </p>
+      <p>
+        Clasificacion: {{imgSeleccionada.tipo}}
+      </p>
+      <p class="link" (click)="toggleFullImg()">Ver en pantalla completa</p>
+      <p id="unLike" title="Votar como mas feo" (click)='votarFotografia("unLike",imgSeleccionada)'>👎</p>
+      <p id="like" title="Votar como mas linda" (click)='votarFotografia("like",imgSeleccionada)'>👍</p>
+      <!-- <img [src]="imagenSeleccionada.link" alt="imagen seleccionada" > -->
+    </ion-card-content>
+  </ion-card>
+  <!-- FIN DETALLADO -->
+
+  <img id="imgFullScreend" *ngIf="showFullImg" src="{{imgSeleccionada.link}}" (click)='toggleFullImg()'
+    alt="imagen seleccionada full screend">
+  <div id="button">
+    <ion-icon name="camera-outline" (click)='tomarFotografia()'></ion-icon>
+  </div>
+</ion-content>

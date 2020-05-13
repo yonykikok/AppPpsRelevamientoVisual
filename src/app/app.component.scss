@@ -1,0 +1,160 @@
+// SPLASH---------------------------------------
+#imgCasas{
+  position: absolute;
+  top: 60% ;
+  width: 400px;
+  height: 250px;
+  animation-name: desvanecerse;
+  animation-duration: 3s;
+  visibility: hidden;
+  animation-iteration-count: infinite;
+  animation-delay: 7s;
+}
+h1{
+  position: absolute;
+  top: 2%;
+  z-index: 10;
+}
+h2{
+  position: absolute;
+  top: 90%;
+  z-index: 10;
+}
+.imagenes{
+  position: absolute;
+  width: 400px;
+  visibility: hidden;
+  animation-duration: 12s;
+}
+#imgUno{
+top: 9.4%;
+left: -21px;
+width: 340px;
+animation-name: entraImgUno;
+animation-delay: 4s;
+}
+#imgDos{
+top: 24.4%;
+animation-name: entraImgDos;
+animation-delay: 3s;
+}
+#imgTres{
+top: 40.2%;
+animation-name: entraImgTres;
+animation-delay: 2s;
+}
+#imgCuatro{
+top: 55.3%;
+left: -1px;
+animation-name: entraImgCuatro;
+animation-delay: 1s;
+}
+@keyframes desvanecerse{
+  from{
+    opacity: 0;
+    visibility: visible;
+  }
+  50%{
+    opacity: 1;
+  }
+  to{ 
+    opacity: 0;
+    visibility: visible;
+  }
+}
+@keyframes entraImgUno{
+  from{
+    left: 100%;
+    visibility: visible;
+}
+  15%{
+    left: -21px;
+    visibility: visible;
+}
+to{
+    
+}
+}
+@keyframes entraImgDos{
+  from{
+    left: -100%;
+    visibility: visible;
+  }
+  15%{
+    left: 0;
+    visibility: visible;
+  }
+  to{
+    
+  }
+}
+@keyframes entraImgTres{
+  from{
+    left: 100%;
+    visibility: visible;
+  }
+  15%{
+    visibility: visible;
+    left: 0;
+  }
+  to{
+
+  }
+}
+@keyframes entraImgCuatro{
+  from{
+    left: -100%;
+    visibility: visible;
+  }
+  15%{
+    visibility: visible;
+    left: -1px;
+  }
+  to{
+    
+  }
+}
+#custom-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100000;
+    width:100%;
+    background-color: white;
+  }
+  #despertador{
+      z-index: -10;
+      position: absolute;
+      width: 35%;
+      top: 47%;
+      left: 53%;
+      animation-name: viajando;
+      animation-duration: 12s;
+  }
+
+  @keyframes viajando{
+      from{
+        z-index: 99999999;
+        top: 47%;
+      }
+      to{
+        transform: rotateZ(-60deg);
+        top: 27%;
+        left: -2%;
+        z-index: 99999999;
+    }
+  } 
+  .flb {
+    // background-color: #3ebffb;  
+    --background:none;
+    // background: url("../assets/images/splash.png") no-repeat center / cover;
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+//   END SPLASH-------------------------------------------

@@ -1,0 +1,29 @@
+<ion-content class="centrado">
+    <ion-icon class="back" name="arrow-undo-outline" (click)="toggleGraphic()"></ion-icon>
+    <h1 *ngIf="mostrarGraficoDeTorta">Grafico de Torta</h1>
+    <h1 *ngIf="!mostrarGraficoDeTorta">Grafico de Barras</h1>
+    <p-inputSwitch [(ngModel)]="mostrarGraficoDeTorta"></p-inputSwitch>
+
+    <p-chart *ngIf="mostrarGraficoDeTorta" type="pie" width="400" height="400" [data]="dataCosasFeas"
+        (onDataSelect)="selectData($event)"></p-chart>
+    <p-chart *ngIf="!mostrarGraficoDeTorta" type="bar" width="400" height="400" (onDataSelect)="selectData($event)"
+        [data]="dataCosasLindas"></p-chart>
+
+    <ion-card id="imgSeleccionada" *ngIf="imgSeleccionada">
+        <ion-card-header>
+            <ion-icon class="back" name="arrow-undo-outline" (click)="deseleccionarImagen()"></ion-icon>
+            <ion-title>
+                Autor: {{imgSeleccionada.usuario}}
+            </ion-title>
+        </ion-card-header>
+        <ion-card-content>
+            <img src="{{imgSeleccionada.link}}" alt="imagen seleccionada">
+            <p>
+                Fecha: {{imgSeleccionada.fecha | date : 'short'}}
+            </p>
+            <p>
+                Clasificacion: {{imgSeleccionada.tipo}}
+            </p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
